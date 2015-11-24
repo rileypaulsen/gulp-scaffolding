@@ -1,0 +1,14 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "description": "Description here",
+  "main": "gulpfile.js",
+  "author": "your-name",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*"
+  }
+}

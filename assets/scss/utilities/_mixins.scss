@@ -1,0 +1,15 @@
+@mixin max-width($point) {
+	@media (max-width: $point)  { @content; }
+}
+
+@mixin min-width($point) {
+	@media (min-width: $point)  { @content; }
+}
+
+@mixin max-height($point) {
+	@media (max-height: $point)  { @content; }
+}
+
+@mixin min-height($point) {
+	@media (min-height: $point)  { @content; }
+}
