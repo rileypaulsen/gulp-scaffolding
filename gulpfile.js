@@ -28,7 +28,7 @@ gulp.task('scripts', function() {
 gulp.task('styles', function(){
 	console.log('Compiling Sass');
 	gulp.src(paths.frontend.sass.src)
-		.pipe(sass({outputStyle: 'compressed'}).on('error',handleSASSError))
+		.pipe(sass({outputStyle: 'expanded'}).on('error',handleSASSError))
 		.pipe(prefix("last 10 versions", "> 1%", "ie 8", "ie 7"))
 		.pipe(gulp.dest(paths.frontend.sass.dest));
 });
