@@ -12,7 +12,7 @@ var paths = {
 			dest: './assets/css'
 		},
 		js: {
-			src: ['./assets/js/**/*.js', '!./assets/js/app.js', '!./assets/js/libraries/**/*.js'],
+			src: ['./assets/js/**/*.js', '!./assets/js/app.min.js', '!./assets/js/libraries/**/*.js'],
 			dest: './assets/js/',
 			filename:'app.min.js'
 		}
