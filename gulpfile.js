@@ -24,7 +24,7 @@ gulp.task('scripts', function() {
 	return gulp.src(paths.frontend.js.src)
 		.pipe(sourcemaps.init())
 		.pipe(concat(paths.frontend.js.filename))
-		.pipe(uglify())
+		.pipe(uglify().on('error',handleError))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(paths.frontend.js.dest));
 });
@@ -33,7 +33,7 @@ gulp.task('styles', function(){
 	console.log('Compiling Sass');
 	gulp.src(paths.frontend.sass.src)
 		.pipe(sourcemaps.init())
-		.pipe(sass({outputStyle: 'expanded'}).on('error',handleSASSError))
+		.pipe(sass({outputStyle: 'expanded'}).on('error',handleError))
 		.pipe(sourcemaps.write())
 		.pipe(prefix("last 2 versions", "> 1%", "ie 8", "ie 7"))
 		.pipe(gulp.dest(paths.frontend.sass.dest));
@@ -44,7 +44,7 @@ gulp.task('default', ['styles', 'scripts'], function(){
 	gulp.watch(paths.frontend.js.src, ['scripts']);
 });
 
-function handleSASSError(error){
+function handleError(error){
 	console.log(error.toString());
 	this.emit('end');
 }
